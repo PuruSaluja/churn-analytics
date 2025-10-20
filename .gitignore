@@ -1,0 +1,27 @@
+# Data
+data/raw/*
+data/intermediate/*
+data/processed/*
+!data/raw/.gitkeep
+!data/intermediate/.gitkeep
+!data/processed/.gitkeep
+
+# Models (Large files)
+models/model_artifacts/*
+!models/model_artifacts/.gitkeep
+
+# Dashboard Exports
+dashboard/export_dataset_for_dashboard.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
