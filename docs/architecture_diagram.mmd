@@ -1,0 +1,36 @@
+graph TD
+    subgraph Data_Source
+        A[Telco Churn Dataset] --> B[Ingest Script]
+        A2[Synthetic Generator] --> B
+    end
+
+    subgraph ETL_Pipeline
+        B --> C[Raw Data (CSV)]
+        C --> D[Transform & Clean]
+        D --> E[Intermediate Data]
+        E --> F[Feature Engineering]
+        F --> G[Processed Data (CSV)]
+        G --> H[Load to SQL]
+    end
+
+    subgraph Data_Warehouse
+        H --> I[(SQLite Warehouse)]
+        I --> J[Star Schema Tables]
+        J --> K[Analytical Views]
+    end
+
+    subgraph Analytics_Modeling
+        G --> L[EDA Notebook]
+        G --> M[Churn Drivers Analysis]
+        G --> N[Segmentation & Cohorts]
+        G --> O[Logistic Regression]
+        G --> P[XGBoost Model]
+        P --> Q[SHAP Explainability]
+    end
+
+    subgraph Presentation
+        K --> R[Dashboard Dataset]
+        R --> S[Power BI / Tableau]
+        Q --> T[Business Report]
+        N --> T
+    end
